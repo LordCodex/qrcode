@@ -37,19 +37,19 @@ if (isset($_POST['qrcode_text'])) {
 				$_SESSION['qr_img'] = $row['qr_img'];
 				$_SESSION['email'] = $row['email'];
             	$_SESSION['id'] = $row['id'];
-            	header("Location: home.php");
+            	header("Location: home");
 		        exit();
             }else{
-				header("Location: index.php?error=INCORRECT QR CODE");
+				header("Location: index?error=INCORRECT QR CODE");
 		        exit();
 			}
 		}else{
-			header("Location: index.php?error=INCORRECT QR CODE");
+			header("Location: index?error=INCORRECT QR CODE");
 	        exit();
 		}
 	}
 	
 }else{
-	header("Location: index.php");
+	header("Location: index");
 	exit();
 }

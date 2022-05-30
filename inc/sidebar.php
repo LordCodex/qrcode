@@ -1,84 +1,96 @@
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
-  <ul class="nav">
-    <li class="nav-item nav-profile">
-      <a href="#" class="nav-link">
-        <div class="profile-image">
-          <img class="img-xs rounded-circle" src="<?php echo $_SESSION['img_url']; ?>" alt="profile image">
-          <div class="dot-indicator bg-success"></div>
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="home" class="brand-link">
+      <img src="<?php echo $logoimg; ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">QR CODE SYSTEM</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="<?php echo $_SESSION['img_url']; ?>" alt="profile image" class="img-circle elevation-2" >
         </div>
-        <div class="text-wrapper">
-          <p class="profile-name"><?php echo $_SESSION['lastname'].$_SESSION['firstname']; ?></p>
-          <p class="designation">Security Guard</p>
+        <div class="info">
+          <a href="#" class="d-block"><?php  echo $_SESSION['lastname'].$_SESSION['firstname']; ?></a>
+          
         </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
         
-      </a>
-    </li>
-    <li class="nav-item nav-category">
-      <span class="nav-link">Dashboard</span>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="home.php">
-        <span class="menu-title">Dashboard</span>
-        <i class="icon-screen-desktop menu-icon"></i>
-      </a>
-    </li>
-    <li class="nav-item nav-category"><span class="nav-link">Check In </span></li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-        <span class="menu-title">Check In Now</span>
-        <i class="icon-layers menu-icon"></i>
-      </a>
-      <!-- <div class="collapse" id="ui-basic">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+         
+         
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="home" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="card" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ID Card</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Attendance
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="timein" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Time In</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="history" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>My History</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          
+          <li class="nav-header">SYSTEM</li>
+          <li class="nav-item">
+            <a href="logout" class="nav-link">
+            <i class="fas fa-sign-out-alt"></i>
+              <p>
+               Logout
+                
+              </p>
+            </a>
+          </li>
+          
         </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="pages/icons/simple-line-icons.html">
-        <span class="menu-title">Icons</span>
-        <i class="icon-globe menu-icon"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="pages/forms/basic_elements.html">
-        <span class="menu-title">Form Elements</span>
-        <i class="icon-book-open menu-icon"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="pages/charts/chartist.html">
-        <span class="menu-title">Charts</span>
-        <i class="icon-chart menu-icon"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="pages/tables/basic-table.html">
-        <span class="menu-title">Tables</span>
-        <i class="icon-grid menu-icon"></i>
-      </a>
-    </li>
-    <li class="nav-item nav-category"><span class="nav-link">Sample Pages</span></li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <span class="menu-title">General Pages</span>
-        <i class="icon-doc menu-icon"></i>
-      </a>
-      <div class="collapse" id="auth">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-        </ul>
-      </div>
-    </li> -->
-    <li class="nav-item pro-upgrade">
-      <span class="nav-link">
-        <a class="btn btn-block px-0 btn-rounded btn-upgrade" href="logout.php" > <i class=" icon-power "></i> Log Out</a>
-      </span>
-    </li>
-  </ul>
-</nav>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

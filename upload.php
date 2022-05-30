@@ -22,8 +22,13 @@ include "db_conn.php";
 
 if(isset($_POST['sub'])){
 	$u=$_POST['qrcode'];
-	$p=$_POST['text'];
-	$c=$_POST['number'];
+	$firstname=$_POST['firstname'];
+	$number=$_POST['number'];
+    $lastname=$_POST['lastname'];
+    $othername=$_POST['othername'];
+    $gender=$_POST['gender'];
+    $dob=$_POST['dob'];
+    $email=$_POST['email'];
  
 	//code for image uploading
 	if($_FILES['f1']['name']){
@@ -47,7 +52,7 @@ if(isset($_POST['sub'])){
 		
 		}
 else{
-	$i="insert into users(qrcode,name,number,img_url,qr_img)values('$u','$p','$c','$img','$qr_image')";
+	$i="insert into users(qrcode,firstname,number,img_url,qr_img,lastname,othername,gender,dob,email)values('$u','$firstname','$number','$img','$qr_image','$lastname','$othername','$gender','$dob','$email')";
 		if(mysqli_query($conn, $i)){
 		echo "Account Created successfully..! your Qr code is
         <br>
@@ -71,7 +76,26 @@ else{
 	<body>
 		<form method="POST" enctype="multipart/form-data">
         Name
-<input type="text" name="text" required>
+<input type="text" name="firstname" required> <br>
+Name2
+<input type="text" name="lastname" required>
+<br>
+Name3
+<input type="text" name="othername" required>
+<br>
+Gender
+<select class="form-control select2"  name="gender" style="width: 100%;" required>
+                  <option value="none" selected disabled hidden>-----Select Gender-----</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    </select>
+                    <br>
+Name3
+<input type="date" name="dob" required>
+
+<br>
+Name3
+<input type="email" name="email" required>
 
 
 	<input type="hidden" name="qrcode" value="<?php echo generateRandomString();?>" required>

@@ -1,0 +1,133 @@
+
+.profile-box{
+    display: flex;
+    max-width: 95%;
+    margin:0 auto;
+    gap:2em;
+}
+.profile-box-one{ 
+    background-color:white;
+    padding:24px;
+    border-radius: 2px;
+}
+
+.profile-box-two{ 
+
+    background-color:white;
+    padding:24px;
+    display: flex;
+    border-radius: 2px;
+    justify-content:space-between;
+    width: 100%;
+}
+.idcard-container{
+    display: flex;
+    max-width: 95%;
+    margin:0 auto;
+    text-align: center;
+    gap: 2em;
+    justify-content:center;
+    
+}
+
+.frontidcard{
+    background-color:white;
+    width:30%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.backg-ca{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: green;
+    height:12em;
+    
+}
+.backg-bo{
+    background-color: green;
+    height:3em;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+.top img{
+    height: 100px;
+    width: 100px;
+    background-color: #e6ebe0;
+    border-radius: 10px;
+    margin-top: -50px;
+    
+}
+
+.na_me{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-emphasis: spacing;
+}
+
+
+.barcode img
+{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+   
+}
+
+.bottom{
+    margin-top:30px;
+}
+
+
+.backidcard{
+    background-color:white;
+    width:30%;
+   
+    border-radius: 15px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.backid-box{
+    padding:10px;
+}
+
+
+@media(max-width: 991px){
+    .idcard-container{
+        flex-direction: column;
+    }
+    .frontidcard{
+        width:100%
+    }
+    .backidcard{
+        width:100%
+    }
+}
+
+@media(max-width: 768px){
+    .profile-box{
+        flex-direction: column;
+    }
+    .profile-box-two{ 
+    flex-direction: column;
+    }
+    .idcard-container{
+        flex-direction: column;
+    }
+    .frontidcard{
+        width:100%
+    }
+    .backidcard{
+        width:100%
+    }
+}
+
+.newuser{
+    width:100%;
+    max-width: 95%;
+    margin: 0 auto;
+}

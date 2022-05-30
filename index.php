@@ -1,7 +1,7 @@
-<<?php
+<?php
    session_start();
    if(isset($_SESSION["qrcode_text"]) == "login"){
-      header("location: home.php");
+      header("location: home");
    } 
 ?>
 
@@ -15,7 +15,7 @@
 <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 </head>
 <body>
-     <form action="login.php" method="post">
+     <form action="login" method="post">
 
      	<h2>LOGIN</h2>
 
@@ -37,24 +37,9 @@
      	</div>
             </div>
      </form>
-             <script>
-           let scanner = new Instascan.Scanner({ video: document.getElementById('preview')});
-           Instascan.Camera.getCameras().then(function(cameras){
-               if(cameras.length > 0 ){
-                   scanner.start(cameras[0]);
-               } else{
-                   alert('No cameras found');
-               }
-
-           }).catch(function(e) {
-               console.error(e);
-           });
-
-           scanner.addListener('scan',function(c){
-               document.getElementById('text').value=c;
-               document.forms[0].submit();
-           });
-
-        </script>
+     <script src="codex.js">
+          
+          </script>
+          
 </body>
 </html>

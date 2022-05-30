@@ -1,7 +1,10 @@
 <?php
-require "home.php";
-
+session_start();
+$mikel =$_SESSION['lastname'] . $_SESSION['firstname'] . ' ' . $_SESSION['othername'];
 ?>
+<?php if(isset($_SESSION["qrcode"]) == ""){
+      header("location: logout.php");
+   } ?>
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +16,7 @@ require "home.php";
 <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 </head>
 <body onLoad="javascript:getLocation()">
-     <form action="inc/timesub.php" method="post">
+     <form action="timesub.php" method="post">
 
      	<h2>TIME IN</h2>
 
@@ -32,9 +35,9 @@ require "home.php";
                     <input id="inputel" type="hidden" value="" name="geolocation"> 
                     <input type="hidden" value="<?php echo date("Y-m-d l"); ?>" name="date">
                     <input type="hidden" value="<?php date_default_timezone_set("Africa/Lagos");echo  date("h:i:sa");?>" name="time_in">
-                    <input type="hidden" value="<?php echo $_SESSION['name']; ?>" name="name">
+                    <input type="hidden" value="<?php echo $mikel; ?>" name="name">
                     <input type="hidden" value="<?php echo $_SESSION['qrcode']; ?>" name="qrcode">
-     	<button  onclick="getLocation()"  type="submit" name="sub">LOGIN</button>
+     	<button  onclick="getLocation()"  type="submit" name="sub">TIME IN</button>
      	</div>
             </div>
      </form>
@@ -59,24 +62,8 @@ inputEl.value = "Latitude: " + position.coords.latitude +
   " Longitude: " + position.coords.longitude;
 }
 </script>
-             <script>
-           let scanner = new Instascan.Scanner({ video: document.getElementById('preview')});
-           Instascan.Camera.getCameras().then(function(cameras){
-               if(cameras.length > 0 ){
-                   scanner.start(cameras[0]);
-               } else{
-                   alert('No cameras found');
-               }
-
-           }).catch(function(e) {
-               console.error(e);
-           });
-
-           scanner.addListener('scan',function(c){
-               document.getElementById('text').value=c;
-               document.forms[0].submit();
-           });
-
+             <script src="codex.js">
+          
         </script>
         
 </body>
